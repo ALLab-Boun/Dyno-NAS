@@ -9,7 +9,7 @@ Implemented on the DARTS codebase.
 ### Dependencies
 
 ```bash
-pip install torch torchvision numpy
+pip install torch==2.7.1+cu128 torchvision==0.22.1+cu128 numpy==2.3.5
 ```
 
 ### Test With Trained Model
