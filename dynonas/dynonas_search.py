@@ -251,7 +251,7 @@ def main():
     # ---- Data ---------------------------------------------------------------
     if args.dataset == 'cifar100':
         num_classes = 100
-        train_transform, valid_transform = utils._data_transforms_cifar10(args)
+        train_transform, valid_transform = utils._data_transforms_cifar100(args)
         train_data = dset.CIFAR100(root=args.data, train=True,
                                    download=True, transform=train_transform)
     else:

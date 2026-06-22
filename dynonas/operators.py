@@ -47,7 +47,7 @@ def mutate(individual: Subnet, t_m: float,
         b_out = b.copy()
         for row in range(N_EDGES):
             t2 = rng.random()
-            if t2 > t_m:
+            if t2 < t_m:
                 a_out[row] = rng.standard_normal(a_out.shape[1])
                 new_b = np.zeros(b_out.shape[1], dtype=b_out.dtype)
                 new_b[rng.integers(b_out.shape[1])] = 1

@@ -154,7 +154,10 @@ def main():
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
         optimizer, float(args.epochs))
 
-    train_transform, valid_transform = utils._data_transforms_cifar10(args)
+    if args.dataset == 'cifar100':
+        train_transform, valid_transform = utils._data_transforms_cifar100(args)
+    else:
+        train_transform, valid_transform = utils._data_transforms_cifar10(args)
     DatasetClass = dset.CIFAR100 if args.dataset == 'cifar100' else dset.CIFAR10
     train_data = DatasetClass(root=args.data, train=True,
                               download=True, transform=train_transform)
